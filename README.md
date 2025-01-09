@@ -187,7 +187,9 @@ public void method() {
 - 커밋 메시지 컨벤션을 지키며 커밋한다. 커밋의 단위는 최대한 작게 나누어보자.
 
 ![image](https://github.com/user-attachments/assets/2a141aa9-1827-4233-a777-b2c213113187)
+
 ex) 
+
 feat: 함수 구현 (x)
 feat: 학생 등록 기능 함수 구현 (o)
 feat: Student 클래스의 멤버 변수 작성 (o)
@@ -197,7 +199,8 @@ docs: Readme 수정(o)
 
 ## 요구 기능 사항 정리
 - DESIGN.md 파일을 만들어 **요구 기능 사항**, **요구 기능 사항을 구현하기 위해서 구현해야할 상세 내용**, **예외 검증 사항**을 정리한다.
-  ex)
+  
+ex)
 ```
 ## 요구 기능 사항
 - 학생 등록
