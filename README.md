@@ -182,8 +182,33 @@ public void method() {
 - 본인이 생각했을 때의 기준 기능별로 feature 브랜치를 파서 작업한다.
   - 네이밍 예시 : 공백은 -로 표현한다. ex) feature/student-add-impl
 - pr에는 자신이 구현한 기능과 코드에 대해 작성한다.
+  
   ![image](https://github.com/user-attachments/assets/165e5cc6-f08f-4394-983b-2a9864893b74)
+- 커밋 메시지 컨벤션을 지키며 커밋한다. 커밋의 단위는 최대한 작게 나누어보자.
 
+![image](https://github.com/user-attachments/assets/2a141aa9-1827-4233-a777-b2c213113187)
+ex) 
+feat: 함수 구현 (x)
+feat: 학생 등록 기능 함수 구현 (o)
+feat: Student 클래스의 멤버 변수 작성 (o)
+refactor: Student 클래스의 멤버 변수 수정 (o)
+feat: Student 클래스 생성자 구현(o)
+docs: Readme 수정(o)
+
+## 요구 기능 사항 정리
+- DESIGN.md 파일을 만들어 **요구 기능 사항**, **요구 기능 사항을 구현하기 위해서 구현해야할 상세 내용**, **예외 검증 사항**을 정리한다.
+  ex)
+```
+## 요구 기능 사항
+- 학생 등록
+- 학생 목록 조회
+## 기능 목록
+- 학번을 입력받는다.
+- 이름을 입력받는다.
+- 국어 점수를 입력받는다.
+...
+```  
+  
 ### 각 클래스의 역할과 책임 준수
 - 클래스의 역할을 잘 부여하며 설계하고 구현하도록 한다.
 - 패키지의 구조를 잘 나누어 설계한다.
