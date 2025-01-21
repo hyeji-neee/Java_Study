@@ -2,7 +2,10 @@ package com.example.java.domains.student;
 
 public class Student {
     private String sid;
-    // 추가...
+    private String name;
+    private int koreanScore;
+    private int mathScore;
+    private int englishScore;
 
     public void validate(String sid) {
         validateSid(sid);
