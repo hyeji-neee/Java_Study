@@ -7,6 +7,14 @@ public class Student {
     private int mathScore;
     private int englishScore;
 
+    public Student(String sid, String name, int koreanScore, int mathScore, int englishScore) {
+        this.sid = sid;
+        this.name = name;
+        this.koreanScore = koreanScore;
+        this.mathScore = mathScore;
+        this.englishScore = englishScore;
+    }
+
     public void validate(String sid) {
         validateSid(sid);
     }
