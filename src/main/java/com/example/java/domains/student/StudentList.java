@@ -9,4 +9,7 @@ public class StudentList {
         stdList.add(student);
     }
 
+    public List<Student> getStudentList(){
+        return stdList;
+    }
 }
