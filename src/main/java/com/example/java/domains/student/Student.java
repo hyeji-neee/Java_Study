@@ -35,8 +35,8 @@ public class Student {
         return englishScore;
     }
 
-    public double getAverageScore(){
-        return (koreanScore + mathScore + englishScore)/3.0;
+    public double calculateAverageScore(){
+        return Math.round((koreanScore + mathScore + englishScore)/3.0);
     }
 
     public void validate(String sid) {
