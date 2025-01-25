@@ -11,6 +11,7 @@ public class InputView {
         }
         return value;
     }
+
     public int menuInt(){
         int value = sc.nextInt();
         if(value < 1 || value > 7) {
@@ -19,4 +20,11 @@ public class InputView {
         return value;
     }
 
+    public int scoreInt(){
+        int value = sc.nextInt();
+        if(value < 0 || value > 100) {
+            throw new IllegalArgumentException("점수 값의 범위는 0~100 입니다.");
+        }
+        return value;
+    }
 }
