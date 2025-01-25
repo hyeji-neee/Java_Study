@@ -15,6 +15,30 @@ public class Student {
         this.englishScore = englishScore;
     }
 
+    public String getSid() {
+        return sid;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public int getKoreanScore() {
+        return koreanScore;
+    }
+
+    public int getMathScore() {
+        return mathScore;
+    }
+
+    public int getEnglishScore() {
+        return englishScore;
+    }
+
+    public double calculateAverageScore(){
+        return Math.round((koreanScore + mathScore + englishScore)/3.0);
+    }
+
     public void validate(String sid) {
         validateSid(sid);
     }
