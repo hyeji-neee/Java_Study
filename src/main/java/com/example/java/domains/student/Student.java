@@ -23,6 +23,18 @@ public class Student {
         return name;
     }
 
+    public int getKoreanScore() {
+        return koreanScore;
+    }
+
+    public int getMathScore() {
+        return mathScore;
+    }
+
+    public int getEnglishScore() {
+        return englishScore;
+    }
+
     public double getAverageScore(){
         return (koreanScore + mathScore + englishScore)/3.0;
     }
