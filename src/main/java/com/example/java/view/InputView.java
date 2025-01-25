@@ -11,4 +11,12 @@ public class InputView {
         }
         return value;
     }
+    public int menuInt(){
+        int value = sc.nextInt();
+        if(value < 1 || value > 7) {
+            throw new IllegalArgumentException("1번~7번 항목 중 선택해야합니다.");
+        }
+        return value;
+    }
+
 }
