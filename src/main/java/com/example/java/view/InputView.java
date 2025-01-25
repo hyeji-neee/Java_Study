@@ -27,4 +27,12 @@ public class InputView {
         }
         return value;
     }
+
+    public int modifyMenuInt(){
+        int value = sc.nextInt();
+        if(value < 1 || value > 5) {
+            throw new IllegalArgumentException("1번~5번 항목 중 선택해야합니다.");
+        }
+        return value;
+    }
 }
