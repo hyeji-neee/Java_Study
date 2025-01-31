@@ -35,4 +35,8 @@ public class OutputView {
         System.out.print("삭제할 학생의 학번을 입력하세요 : ");
     }
 
+    public void showSearchStudentIdPrompt(){
+        System.out.print("검색할 학생의 학번을 입력하세요 : ");
+    }
+
 }
