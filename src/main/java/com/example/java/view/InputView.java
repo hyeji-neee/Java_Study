@@ -1,6 +1,7 @@
 package com.example.java.view;
 
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class InputView {
     private final Scanner sc = new Scanner(System.in);
@@ -13,25 +14,18 @@ public class InputView {
     }
 
     public int menuInt(){
-        int value = sc.nextInt();
-        if(value < 1 || value > 7) {
-            throw new IllegalArgumentException("1번~7번 항목 중 선택해야합니다.");
+        try {
+            int value = sc.nextInt();
+            return value;
+        } catch (InputMismatchException e) {
+            throw new IllegalArgumentException("숫자를 입력해야 합니다.");
         }
-        return value;
     }
 
-    public int scoreInt(){
+    public int scoreInt() {
         int value = sc.nextInt();
-        if(value < 0 || value > 100) {
+        if (value < 0 || value > 100) {
             throw new IllegalArgumentException("점수 값의 범위는 0~100 입니다.");
-        }
-        return value;
-    }
-
-    public int modifyMenuInt(){
-        int value = sc.nextInt();
-        if(value < 1 || value > 5) {
-            throw new IllegalArgumentException("1번~5번 항목 중 선택해야합니다.");
         }
         return value;
     }
