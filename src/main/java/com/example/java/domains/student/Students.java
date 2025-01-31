@@ -9,7 +9,7 @@ public class Students {
         stdList = new ArrayList<>();
     }
 
-    public List<Student> getStudentList(){
+    public List<Student> getStdList(){
         return stdList;
     }
 }
