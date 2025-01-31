@@ -8,4 +8,8 @@ public class Students {
     public Students() {
         stdList = new ArrayList<>();
     }
+
+    public List<Student> getStudentList(){
+        return stdList;
+    }
 }
