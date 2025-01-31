@@ -15,6 +15,11 @@ public class OutputView {
         System.out.print("메뉴를 선택하세요 : ");
     }
 
+    public void modifyMenu(){
+        System.out.println("1. 학번, 2. 이름, 3. 국어 점수, 4. 수학 점수, 5. 영어 점수");
+        System.out.print("수정할 항목을 선택하세요 : ");
+    }
+
     public void showStudentIdPrompt(){
         System.out.print("학번 8자리를 입력하세요 : ");
     }
