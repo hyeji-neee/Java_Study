@@ -12,7 +12,7 @@ public class OutputView {
         System.out.println("5. 학생 삭제");
         System.out.println("6. 학생 검색");
         System.out.println("7. 종료");
-        System.out.println("메뉴를 선택하세요 : ");
+        System.out.print("메뉴를 선택하세요 : ");
     }
 
     public void showStudentIdPrompt(){
@@ -22,13 +22,13 @@ public class OutputView {
         System.out.print("학생의 이름을 입력하세요 : ");
     }
     public void showStudentKoreanScorePrompt(){
-        System.out.print("국어 점수를 입력하세요 (0~100)");
+        System.out.print("국어 점수를 입력하세요 (0~100) : ");
     }
     public void showStudentMathScorePrompt(){
-        System.out.print("수학 점수를 입력하세요 (0~100)");
+        System.out.print("수학 점수를 입력하세요 (0~100) : ");
     }
     public void showStudentEnglishScorePrompt(){
-        System.out.print("영어 점수를 입력하세요 (0~100)");
+        System.out.print("영어 점수를 입력하세요 (0~100) : ");
     }
 
     public void showDeleteStudentIdPrompt(){
