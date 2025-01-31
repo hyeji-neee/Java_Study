@@ -3,13 +3,13 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Students {
-    private List<Student> stdList;
+    private List<Student> students;
 
     public Students() {
-        stdList = new ArrayList<>();
+        students = new ArrayList<>();
     }
 
-    public List<Student> getStdList(){
-        return stdList;
+    public List<Student> getStudents(){
+        return students;
     }
 }
