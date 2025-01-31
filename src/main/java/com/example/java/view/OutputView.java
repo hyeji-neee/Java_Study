@@ -31,4 +31,8 @@ public class OutputView {
         System.out.print("영어 점수를 입력하세요 (0~100)");
     }
 
+    public void showDeleteStudentIdPrompt(){
+        System.out.print("삭제할 학생의 학번을 입력하세요 : ");
+    }
+
 }
