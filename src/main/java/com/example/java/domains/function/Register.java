@@ -5,9 +5,6 @@ import java.util.List;
 
 public class Register {
     public void stdRegister(List<Student> students, Student student) {
-        if(students.contains(student)){
-            throw new IllegalArgumentException("이미 등록되어있는 학생입니다.");
-        }
         students.add(student);
     }
 }
