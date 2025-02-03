@@ -9,6 +9,5 @@ public class Register {
             throw new IllegalArgumentException("이미 등록되어있는 학생입니다.");
         }
         students.add(student);
-        System.out.println("학생 등록이 완료되었습니다!");
     }
 }
