@@ -6,15 +6,9 @@ import java.util.List;
 
 public class Validation {
     public void validateSid(String sid) {
-        if (sid.length() != 8) {
-            throw new IllegalArgumentException("학번은 8자리이어야 합니다.");
+        if (!sid.matches("\\d{8}")) {
+            throw new IllegalArgumentException("학번은 8자리 숫자로만 이루어져야 합니다.");
         }
-        for (char c : sid.toCharArray()) {
-            if (!Character.isDigit(c)) {
-                throw new IllegalArgumentException("학번은 숫자로 구성되어야 합니다.");
-            }
-        }
-
     }
 
     public void validateName(String name) {
