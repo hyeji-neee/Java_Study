@@ -40,5 +40,8 @@ public class Student {
         return Math.round((koreanScore + mathScore + englishScore)/3.0);
     }
 
+    public void stdRegister(List<Student> students, Student student) {
+        students.add(student);
+    }
 
 }
