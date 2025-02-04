@@ -44,4 +44,7 @@ public class OutputView {
         System.out.print("검색할 학생의 학번을 입력하세요 : ");
     }
 
+    public void showRegistrationSuccessMessage(){
+        System.out.println("학생 등록이 완료되었습니다!");
+    }
 }

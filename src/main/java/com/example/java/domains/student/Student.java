@@ -1,4 +1,5 @@
 package com.example.java.domains.student;
+import java.util.List;
 
 public class Student {
     private String sid;
@@ -39,13 +40,8 @@ public class Student {
         return Math.round((koreanScore + mathScore + englishScore)/3.0);
     }
 
-    public void validate(String sid) {
-        validateSid(sid);
+    public void stdRegister(List<Student> students, Student student) {
+        students.add(student);
     }
 
-    private void validateSid(String sid) {
-        if(sid.length() != 8) {
-            throw new IllegalArgumentException("학번은 8자리이어야 합니다.");
-        }
-    }
 }
