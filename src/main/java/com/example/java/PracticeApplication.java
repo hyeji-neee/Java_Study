@@ -23,6 +23,7 @@ public class PracticeApplication {
                         validation.validateRegistration(students.getStudents(), id);
                         outputView.showStudentNamePrompt();
                         String name = inputView.readLine();
+                        validation.validateName(name);
                         outputView.showStudentKoreanScorePrompt();
                         int korScore = inputView.scoreInt();
                         outputView.showStudentMathScorePrompt();
