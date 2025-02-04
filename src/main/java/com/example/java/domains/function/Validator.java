@@ -4,7 +4,7 @@ import com.example.java.domains.student.Student;
 
 import java.util.List;
 
-public class Validation {
+public class Validator {
     public void validateSid(String sid) {
         if (!sid.matches("\\d{8}")) {
             throw new IllegalArgumentException("학번은 8자리 숫자로만 이루어져야 합니다.");

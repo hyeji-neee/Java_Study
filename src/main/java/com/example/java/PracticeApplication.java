@@ -1,6 +1,6 @@
 package com.example.java;
 
-import com.example.java.domains.function.Validation;
+import com.example.java.domains.function.Validator;
 import com.example.java.domains.student.Students;
 import com.example.java.domains.student.Student;
 import com.example.java.view.InputView;
@@ -11,7 +11,7 @@ public class PracticeApplication {
         Students students = new Students();
         OutputView outputView = new OutputView();
         InputView inputView = new InputView();
-        Validation validation = new Validation();
+        Validator validator = new Validator();
         try {
             while(true){
                 outputView.mainMenu();
@@ -19,11 +19,11 @@ public class PracticeApplication {
                     case 2: // 등록
                         outputView.showStudentIdPrompt();
                         String id = inputView.readLine();
-                        validation.validateSid(id);
-                        validation.validateRegistration(students.getStudents(), id);
+                        validator.validateSid(id);
+                        validator.validateRegistration(students.getStudents(), id);
                         outputView.showStudentNamePrompt();
                         String name = inputView.readLine();
-                        validation.validateName(name);
+                        validator.validateName(name);
                         outputView.showStudentKoreanScorePrompt();
                         int korScore = inputView.scoreInt();
                         outputView.showStudentMathScorePrompt();
