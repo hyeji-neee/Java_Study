@@ -44,8 +44,8 @@ public class PracticeApplication {
                         outputView.showDeleteStudentIdPrompt();
                         String deleteId = inputView.readLine();
                         validator.validateSid(deleteId);
-                        validator.validateDeletion(students.getStudents(), deleteId);
                         Student deletedStudent = students.findDeletedStudentById(students.getStudents(), deleteId);
+                        validator.validateDeletion(deletedStudent);
                         String deletedName = students.stdDelete(deletedStudent);
                         outputView.showDeletionSuccessMessage(deletedName);
                         break;

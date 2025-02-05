@@ -25,15 +25,8 @@ public class Validator {
         }
     }
 
-    public void validateDeletion(List<Student> students, String sid) {
-        boolean found = false;
-        for (Student s : students) {
-            if (s.getSid().equals(sid)) {
-                found = true;
-                break;
-            }
-        }
-        if (!found) {
+    public void validateDeletion(Student deletedStudent) {
+        if (deletedStudent == null) {
             throw new IllegalArgumentException("삭제할 학생이 존재하지 않습니다.");
         }
     }
