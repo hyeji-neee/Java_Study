@@ -1,5 +1,7 @@
 package com.example.java.domains.student;
+
 import java.util.List;
+import java.util.Iterator;
 
 public class Student {
     private String sid;
@@ -20,7 +22,7 @@ public class Student {
         return sid;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
@@ -36,12 +38,24 @@ public class Student {
         return englishScore;
     }
 
-    public double calculateAverageScore(){
-        return Math.round((koreanScore + mathScore + englishScore)/3.0);
+    public double calculateAverageScore() {
+        return Math.round((koreanScore + mathScore + englishScore) / 3.0);
     }
 
     public void stdRegister(List<Student> students, Student student) {
         students.add(student);
     }
 
+    public static String stdDelete(List<Student> students, String deleteId) {
+        Iterator<Student> iterator = students.iterator();
+        while (iterator.hasNext()) {
+            Student student = iterator.next();
+            if (student.getSid().equals(deleteId)) {
+                String name = student.getName();
+                iterator.remove();
+                return name;
+            }
+        }
+        return null;
+    }
 }
