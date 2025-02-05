@@ -1,4 +1,5 @@
 package com.example.java.domains.student;
+
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,7 +11,7 @@ public class Students {
         students = new ArrayList<>();
     }
 
-    public List<Student> getStudents(){
+    public List<Student> getStudents() {
         return students;
     }
 
@@ -18,11 +19,11 @@ public class Students {
         students.add(student);
     }
 
-    public Student findDeletedStudentById(List<Student> students, String deleteId){
+    public Student findDeletedStudentById(List<Student> students, String deleteId) {
         Iterator<Student> iterator = students.iterator();
-        while(iterator.hasNext()){
+        while (iterator.hasNext()) {
             Student student = iterator.next();
-            if(student.getSid().equals(deleteId)){
+            if (student.getSid().equals(deleteId)) {
                 return student;
             }
         }
