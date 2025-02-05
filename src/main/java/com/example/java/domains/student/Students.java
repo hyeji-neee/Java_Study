@@ -14,6 +14,10 @@ public class Students {
         return students;
     }
 
+    public void stdRegister(List<Student> students, Student student) {
+        students.add(student);
+    }
+
     public Student findDeletedStudentById(List<Student> students, String deleteId){
         Iterator<Student> iterator = students.iterator();
         while(iterator.hasNext()){
