@@ -29,8 +29,7 @@ public class Students {
         return null;
     }
 
-    public String stdDelete(List<Student> students, String deleteId) {
-        Student student = findDeletedStudentById(students, deleteId);
+    public String stdDelete(Student student) {
         String name = student.getName();
         students.remove(student);
         return name;

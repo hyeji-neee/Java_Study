@@ -16,7 +16,7 @@ public class PracticeApplication {
             while (true) {
                 outputView.mainMenu();
                 switch (inputView.menuInt()) {
-                    case 3: // 등록
+                    case 3:
                         outputView.showStudentIdPrompt();
                         String id = inputView.readLine();
                         validator.validateSid(id);
@@ -36,16 +36,19 @@ public class PracticeApplication {
                         int engScore = inputView.scoreInt();
 
                         Student student = new Student(id, name, korScore, mathScore, engScore);
-                        student.stdRegister(students.getStudents(), student);
+                        students.stdRegister(students.getStudents(), student);
                         outputView.showRegistrationSuccessMessage();
                         break;
-                    case 5: // 삭제
+
+                    case 5:
                         outputView.showDeleteStudentIdPrompt();
                         String deleteId = inputView.readLine();
                         validator.validateSid(deleteId);
                         validator.validateDeletion(students.getStudents(), deleteId);
-                        String deletedName = Student.stdDelete(students.getStudents(), deleteId);
+                        Student deletedStudent = students.findDeletedStudentById(students.getStudents(), deleteId);
+                        String deletedName = students.stdDelete(deletedStudent);
                         outputView.showDeletionSuccessMessage(deletedName);
+                        break;
                 }
                 ;
             }
