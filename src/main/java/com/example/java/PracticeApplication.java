@@ -13,10 +13,10 @@ public class PracticeApplication {
         InputView inputView = new InputView();
         Validator validator = new Validator();
         try {
-            while(true){
+            while (true) {
                 outputView.mainMenu();
-                switch(inputView.menuInt()){
-                    case 2: // 등록
+                switch (inputView.menuInt()) {
+                    case 3: // 등록
                         outputView.showStudentIdPrompt();
                         String id = inputView.readLine();
                         validator.validateSid(id);
@@ -35,7 +35,7 @@ public class PracticeApplication {
                         outputView.showStudentEnglishScorePrompt();
                         int engScore = inputView.scoreInt();
 
-                        Student student = new Student(id,name,korScore,mathScore,engScore);
+                        Student student = new Student(id, name, korScore, mathScore, engScore);
                         student.stdRegister(students.getStudents(), student);
                         outputView.showRegistrationSuccessMessage();
                         break;
@@ -46,7 +46,8 @@ public class PracticeApplication {
                         validator.validateDeletion(students.getStudents(), deleteId);
                         String deletedName = Student.stdDelete(students.getStudents(), deleteId);
                         outputView.showDeletionSuccessMessage(deletedName);
-                };
+                }
+                ;
             }
         } catch (IllegalStateException e) {
             System.out.println(e.getMessage());
