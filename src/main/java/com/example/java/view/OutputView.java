@@ -47,4 +47,8 @@ public class OutputView {
     public void showRegistrationSuccessMessage(){
         System.out.println("학생 등록이 완료되었습니다!");
     }
+
+    public void showDeletionSuccessMessage(String deletedName){
+        System.out.println(deletedName + " 님이 삭제되었습니다.");
+    }
 }
