@@ -66,6 +66,11 @@ public class PracticeApplication {
                                 int modifiedMathScore = inputView.scoreInt();
                                 students.stdModifyMathScore(modifiedStudent, modifiedMathScore);
                                 break;
+                            case 5:
+                                outputView.showModifyEnglishScorePrompt();
+                                int modifiedEngScore = inputView.scoreInt();
+                                students.stdModifyEnglishScore(modifiedStudent, modifiedEngScore);
+                                break;
                         }
                         outputView.showModificationSuccessMessage();
                         break;

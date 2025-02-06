@@ -47,4 +47,8 @@ public class Students {
     public void stdModifyMathScore(Student student, int newMathScore){
         student.setMathScore(newMathScore);
     }
+
+    public void stdModifyEnglishScore(Student student, int newEnglishScore) {
+        student.setEnglishScore(newEnglishScore);
+    }
 }
