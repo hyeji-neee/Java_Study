@@ -24,10 +24,4 @@ public class Validator {
             }
         }
     }
-
-    public void validateDeletion(Student deletedStudent) {
-        if (deletedStudent == null) {
-            throw new IllegalArgumentException("삭제할 학생이 존재하지 않습니다.");
-        }
-    }
 }

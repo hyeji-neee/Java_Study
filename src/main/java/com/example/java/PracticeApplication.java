@@ -45,14 +45,13 @@ public class PracticeApplication {
                         String deleteId = inputView.readLine();
                         validator.validateSid(deleteId);
                         Student deletedStudent = students.findStudentById(students.getStudents(), deleteId);
-                        validator.validateDeletion(deletedStudent);
                         String deletedName = students.stdDelete(deletedStudent);
                         outputView.showDeletionSuccessMessage(deletedName);
                         break;
                 }
                 ;
             }
-        } catch (IllegalStateException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }

@@ -23,7 +23,7 @@ public class Students {
         return students.stream()
                 .filter(student -> student.getSid().equals(id))
                 .findFirst()
-                .orElse(null);
+                .orElseThrow(() -> new IllegalArgumentException("학생을 찾을 수 없습니다."));
     }
 
     public String stdDelete(Student student) {
