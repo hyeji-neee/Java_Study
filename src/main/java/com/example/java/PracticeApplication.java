@@ -71,6 +71,8 @@ public class PracticeApplication {
                                 int modifiedEngScore = inputView.scoreInt();
                                 students.stdModifyEnglishScore(modifiedStudent, modifiedEngScore);
                                 break;
+                            default:
+                                throw new IllegalArgumentException("1~5번 항목 중 선택해야 합니다.");
                         }
                         outputView.showModificationSuccessMessage();
                         break;
