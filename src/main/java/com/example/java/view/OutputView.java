@@ -79,4 +79,8 @@ public class OutputView {
     public void showModifyEnglishScorePrompt(){
         System.out.println("\n 수정할 영어 점수를 입력하세요 : \n");
     }
+
+    public void showModificationSuccessMessage() {
+        System.out.println("\n학생 수정이 완료되었습니다!\n");
+    }
 }
