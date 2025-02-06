@@ -38,6 +38,26 @@ public class Student {
         return englishScore;
     }
 
+    public void setSid(String sid) {
+        this.sid = sid;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setKoreanScore(int koreanScore) {
+        this.koreanScore = koreanScore;
+    }
+
+    public void setMathScore(int mathScore) {
+        this.mathScore = mathScore;
+    }
+
+    public void setEnglishScore(int englishScore) {
+        this.englishScore = englishScore;
+    }
+
     public double calculateAverageScore() {
         return Math.round((koreanScore + mathScore + englishScore) / 3.0);
     }
