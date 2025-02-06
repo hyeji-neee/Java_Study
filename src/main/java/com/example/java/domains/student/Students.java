@@ -35,4 +35,8 @@ public class Students {
     public void stdModifyId(Student student, String newId) {
         student.setSid(newId);
     }
+
+    public void stdModifyName(Student student, String newName) {
+        student.setName(newName);
+    }
 }

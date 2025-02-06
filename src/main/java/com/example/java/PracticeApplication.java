@@ -51,6 +51,11 @@ public class PracticeApplication {
                                 String modifiedId = inputView.readLine();
                                 students.stdModifyId(modifiedStudent, modifiedId);
                                 break;
+                            case 2:
+                                outputView.showModifyNamePrompt();
+                                String modifiedName = inputView.readLine();
+                                students.stdModifyName(modifiedStudent, modifiedName);
+                                break;
                         }
                         outputView.showModificationSuccessMessage();
                         break;
