@@ -56,6 +56,11 @@ public class PracticeApplication {
                                 String modifiedName = inputView.readLine();
                                 students.stdModifyName(modifiedStudent, modifiedName);
                                 break;
+                            case 3:
+                                outputView.showModifyKoreanScorePrompt();
+                                int modifiedKorScore = inputView.scoreInt();
+                                students.stdModifyKoreanScore(modifiedStudent, modifiedKorScore);
+                                break;
                         }
                         outputView.showModificationSuccessMessage();
                         break;
