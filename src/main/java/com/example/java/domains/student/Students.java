@@ -31,4 +31,8 @@ public class Students {
         students.remove(student);
         return name;
     }
+
+    public void stdModifyId(Student student, String newId) {
+        student.setSid(newId);
+    }
 }
