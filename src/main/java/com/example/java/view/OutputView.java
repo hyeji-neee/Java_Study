@@ -49,7 +49,7 @@ public class OutputView {
     }
 
     public void showModifyStudentIdPrompt() {
-        System.out.print("\n수정할 학생의 학번을 입력하세요 : ");
+        System.out.print("\n수정할 학생의 학번을 입력하세요 : \n");
     }
 
     public void showRegistrationSuccessMessage() {
@@ -60,4 +60,23 @@ public class OutputView {
         System.out.println("\n" + deletedName + " 님이 삭제되었습니다.\n");
     }
 
+    public void showModifyIdPrompt(){
+        System.out.println("\n 수정할 학번을 입력하세요 : \n");
+    }
+
+    public void showModifyNamePrompt(){
+        System.out.println("\n 수정할 이름을 입력하세요 : \n");
+    }
+
+    public void showModifyKoreanScorePrompt(){
+        System.out.println("\n 수정할 국어 점수를 입력하세요 : \n");
+    }
+
+    public void showModifyMathScorePrompt(){
+        System.out.println("\n 수정할 수학 점수를 입력하세요 : \n");
+    }
+
+    public void showModifyEnglishScorePrompt(){
+        System.out.println("\n 수정할 영어 점수를 입력하세요 : \n");
+    }
 }
