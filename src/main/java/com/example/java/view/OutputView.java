@@ -77,7 +77,7 @@ public class OutputView {
     }
 
     public void showModifyEnglishScorePrompt(){
-        System.out.println("\n수정할 영어 점수를 입력하세요 : \n");
+        System.out.print("\n수정할 영어 점수를 입력하세요 : ");
     }
 
     public void showModificationSuccessMessage() {
