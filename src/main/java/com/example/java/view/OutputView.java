@@ -48,6 +48,10 @@ public class OutputView {
         System.out.print("\n검색할 학생의 학번을 입력하세요 : ");
     }
 
+    public void showModifyStudentIdPrompt() {
+        System.out.print("\n수정할 학생의 학번을 입력하세요 : ");
+    }
+
     public void showRegistrationSuccessMessage() {
         System.out.println("\n학생 등록이 완료되었습니다!\n");
     }
@@ -55,4 +59,5 @@ public class OutputView {
     public void showDeletionSuccessMessage(String deletedName) {
         System.out.println("\n" + deletedName + " 님이 삭제되었습니다.\n");
     }
+
 }
