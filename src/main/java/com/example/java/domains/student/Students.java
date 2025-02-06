@@ -19,15 +19,11 @@ public class Students {
         students.add(student);
     }
 
-    public Student findDeletedStudentById(List<Student> students, String deleteId) {
-        Iterator<Student> iterator = students.iterator();
-        while (iterator.hasNext()) {
-            Student student = iterator.next();
-            if (student.getSid().equals(deleteId)) {
-                return student;
-            }
-        }
-        return null;
+    public Student findStudentById(List<Student> students, String id) {
+        return students.stream()
+                .filter(student -> student.getSid().equals(id))
+                .findFirst()
+                .orElse(null);
     }
 
     public String stdDelete(Student student) {
