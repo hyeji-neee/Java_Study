@@ -55,4 +55,12 @@ public class OutputView {
     public void showDeletionSuccessMessage(String deletedName) {
         System.out.println("\n" + deletedName + " 님이 삭제되었습니다.\n");
     }
+
+    public void showSearchedStudentName(String searchedName) {
+        System.out.println("\n이름: " + searchedName);
+    }
+
+    public void showSearchedStudentAverageScore(double averageScore) {
+        System.out.println("평균: " + averageScore+"\n");
+    }
 }
