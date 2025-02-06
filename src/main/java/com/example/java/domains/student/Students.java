@@ -43,4 +43,8 @@ public class Students {
     public void stdModifyKoreanScore(Student student, int newKoreanScore) {
         student.setKoreanScore(newKoreanScore);
     }
+
+    public void stdModifyMathScore(Student student, int newMathScore){
+        student.setMathScore(newMathScore);
+    }
 }

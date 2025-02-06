@@ -61,6 +61,11 @@ public class PracticeApplication {
                                 int modifiedKorScore = inputView.scoreInt();
                                 students.stdModifyKoreanScore(modifiedStudent, modifiedKorScore);
                                 break;
+                            case 4:
+                                outputView.showModifyMathScorePrompt();
+                                int modifiedMathScore = inputView.scoreInt();
+                                students.stdModifyMathScore(modifiedStudent, modifiedMathScore);
+                                break;
                         }
                         outputView.showModificationSuccessMessage();
                         break;
