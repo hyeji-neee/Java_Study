@@ -16,6 +16,7 @@ public class InputView {
     public int menuInt(){
         try {
             int value = sc.nextInt();
+            sc.nextLine();
             return value;
         } catch (InputMismatchException e) {
             throw new IllegalArgumentException("숫자를 입력해야 합니다.");

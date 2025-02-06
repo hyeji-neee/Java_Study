@@ -13,30 +13,45 @@ public class PracticeApplication {
         InputView inputView = new InputView();
         Validator validator = new Validator();
         try {
-            while(true){
+            while (true) {
                 outputView.mainMenu();
-                switch(inputView.menuInt()){
-                    case 2: // 등록
+                switch (inputView.menuInt()) {
+                    case 3:
                         outputView.showStudentIdPrompt();
                         String id = inputView.readLine();
                         validator.validateSid(id);
                         validator.validateRegistration(students.getStudents(), id);
+
                         outputView.showStudentNamePrompt();
                         String name = inputView.readLine();
                         validator.validateName(name);
+
                         outputView.showStudentKoreanScorePrompt();
                         int korScore = inputView.scoreInt();
+
                         outputView.showStudentMathScorePrompt();
                         int mathScore = inputView.scoreInt();
+
                         outputView.showStudentEnglishScorePrompt();
                         int engScore = inputView.scoreInt();
-                        Student student = new Student(id,name,korScore,mathScore,engScore);
-                        student.stdRegister(students.getStudents(), student);
+
+                        Student student = new Student(id, name, korScore, mathScore, engScore);
+                        students.stdRegister(students.getStudents(), student);
                         outputView.showRegistrationSuccessMessage();
                         break;
-                };
+
+                    case 5:
+                        outputView.showDeleteStudentIdPrompt();
+                        String deleteId = inputView.readLine();
+                        validator.validateSid(deleteId);
+                        Student deletedStudent = students.findStudentById(students.getStudents(), deleteId);
+                        String deletedName = students.stdDelete(deletedStudent);
+                        outputView.showDeletionSuccessMessage(deletedName);
+                        break;
+                }
+                ;
             }
-        } catch (IllegalStateException e) {
+        } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
         }
     }
