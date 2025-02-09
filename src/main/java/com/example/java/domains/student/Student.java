@@ -42,23 +42,23 @@ public class Student {
         return Math.round((koreanScore + mathScore + englishScore) / 3.0);
     }
 
-    public void stdModifyId(String newId) {
+    public void updateId(String newId) {
         this.sid = newId;
     }
 
-    public void stdModifyName(String newName) {
+    public void updateName(String newName) {
         this.name = newName;
     }
 
-    public void stdModifyKoreanScore(int newKoreanScore) {
+    public void updateKoreanScore(int newKoreanScore) {
         this.koreanScore = newKoreanScore;
     }
 
-    public void stdModifyMathScore(int newMathScore){
+    public void updateMathScore(int newMathScore){
         this.mathScore = newMathScore;
     }
 
-    public void stdModifyEnglishScore(int newEnglishScore) {
+    public void updateEnglishScore(int newEnglishScore) {
         this.englishScore = newEnglishScore;
     }
 
