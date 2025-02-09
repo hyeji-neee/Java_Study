@@ -49,27 +49,27 @@ public class PracticeApplication {
                             case 1:
                                 outputView.showModifyIdPrompt();
                                 String modifiedId = inputView.readLine();
-                                students.stdModifyId(modifiedStudent, modifiedId);
+                                modifiedStudent.stdModifyId(modifiedId);
                                 break;
                             case 2:
                                 outputView.showModifyNamePrompt();
                                 String modifiedName = inputView.readLine();
-                                students.stdModifyName(modifiedStudent, modifiedName);
+                                modifiedStudent.stdModifyName(modifiedName);
                                 break;
                             case 3:
                                 outputView.showModifyKoreanScorePrompt();
                                 int modifiedKorScore = inputView.scoreInt();
-                                students.stdModifyKoreanScore(modifiedStudent, modifiedKorScore);
+                                modifiedStudent.stdModifyKoreanScore(modifiedKorScore);
                                 break;
                             case 4:
                                 outputView.showModifyMathScorePrompt();
                                 int modifiedMathScore = inputView.scoreInt();
-                                students.stdModifyMathScore(modifiedStudent, modifiedMathScore);
+                                modifiedStudent.stdModifyMathScore(modifiedMathScore);
                                 break;
                             case 5:
                                 outputView.showModifyEnglishScorePrompt();
                                 int modifiedEngScore = inputView.scoreInt();
-                                students.stdModifyEnglishScore(modifiedStudent, modifiedEngScore);
+                                modifiedStudent.stdModifyEnglishScore(modifiedEngScore);
                                 break;
                             default:
                                 throw new IllegalArgumentException("1~5번 항목 중 선택해야 합니다.");
