@@ -38,28 +38,28 @@ public class Student {
         return englishScore;
     }
 
-    public void setSid(String sid) {
-        this.sid = sid;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setKoreanScore(int koreanScore) {
-        this.koreanScore = koreanScore;
-    }
-
-    public void setMathScore(int mathScore) {
-        this.mathScore = mathScore;
-    }
-
-    public void setEnglishScore(int englishScore) {
-        this.englishScore = englishScore;
-    }
-
     public double calculateAverageScore() {
         return Math.round((koreanScore + mathScore + englishScore) / 3.0);
+    }
+
+    public void stdModifyId(String newId) {
+        this.sid = newId;
+    }
+
+    public void stdModifyName(String newName) {
+        this.name = newName;
+    }
+
+    public void stdModifyKoreanScore(int newKoreanScore) {
+        this.koreanScore = newKoreanScore;
+    }
+
+    public void stdModifyMathScore(int newMathScore){
+        this.mathScore = newMathScore;
+    }
+
+    public void stdModifyEnglishScore(int newEnglishScore) {
+        this.englishScore = newEnglishScore;
     }
 
 }

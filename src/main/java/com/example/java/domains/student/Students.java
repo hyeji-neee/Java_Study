@@ -31,24 +31,4 @@ public class Students {
         students.remove(student);
         return name;
     }
-
-    public void stdModifyId(Student student, String newId) {
-        student.setSid(newId);
-    }
-
-    public void stdModifyName(Student student, String newName) {
-        student.setName(newName);
-    }
-
-    public void stdModifyKoreanScore(Student student, int newKoreanScore) {
-        student.setKoreanScore(newKoreanScore);
-    }
-
-    public void stdModifyMathScore(Student student, int newMathScore){
-        student.setMathScore(newMathScore);
-    }
-
-    public void stdModifyEnglishScore(Student student, int newEnglishScore) {
-        student.setEnglishScore(newEnglishScore);
-    }
 }
