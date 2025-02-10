@@ -1,10 +1,11 @@
 package com.example.java.view;
 
 import com.example.java.domains.student.*;
+import java.util.List;
 
 public class OutputView {
     public void mainMenu() {
-        System.out.println("<학생 관리 프로그램>");
+        System.out.println("\n<학생 관리 프로그램>");
         System.out.println("1. 모든 학생 조회 (이름순)");
         System.out.println("2. 모든 학생 조회 (평균순)");
         System.out.println("3. 학생 등록");
@@ -49,11 +50,11 @@ public class OutputView {
     }
 
     public void showRegistrationSuccessMessage() {
-        System.out.println("\n학생 등록이 완료되었습니다!\n");
+        System.out.println("\n학생 등록이 완료되었습니다!");
     }
 
     public void showDeletionSuccessMessage(String deletedName) {
-        System.out.println("\n" + deletedName + " 님이 삭제되었습니다.\n");
+        System.out.println("\n" + deletedName + " 님이 삭제되었습니다.");
     }
 
     public void showSearchedStudentName(String searchedName) {
@@ -62,5 +63,11 @@ public class OutputView {
 
     public void showSearchedStudentAverageScore(double averageScore) {
         System.out.println("평균: " + averageScore+"\n");
+    }
+
+    public void showOrderedStudentByName(List<Student> students) {
+        for(Student student : students){
+            System.out.println(student);
+        }
     }
 }
