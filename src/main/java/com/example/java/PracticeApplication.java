@@ -17,10 +17,12 @@ public class PracticeApplication {
                 outputView.mainMenu();
                 switch (inputView.menuInt()) {
                     case 1:
+                        validator.validateIfStudentsListIsEmpty(students.getStudents());
                         students.orderStudentsByName(students.getStudents());
                         outputView.showStudents(students.getStudents());
                         break;
                     case 2:
+                        validator.validateIfStudentsListIsEmpty(students.getStudents());
                         students.orderStudentsByScore(students.getStudents());
                         outputView.showStudents(students.getStudents());
                         break;

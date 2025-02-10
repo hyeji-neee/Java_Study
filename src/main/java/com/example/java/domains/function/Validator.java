@@ -24,4 +24,10 @@ public class Validator {
             }
         }
     }
+
+    public void validateIfStudentsListIsEmpty(List<Student> students) {
+        if (students.isEmpty()) {
+            throw new IllegalArgumentException("학생 목록이 비어 있습니다.");
+        }
+    }
 }
