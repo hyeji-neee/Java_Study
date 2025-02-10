@@ -65,7 +65,7 @@ public class OutputView {
         System.out.println("평균: " + averageScore+"\n");
     }
 
-    public void showOrderedStudentByName(List<Student> students) {
+    public void showStudents(List<Student> students) {
         for(Student student : students){
             System.out.println(student);
         }
