@@ -56,6 +56,9 @@ public class PracticeApplication {
                         outputView.showSearchedStudentName(searchedStudent.getName());
                         outputView.showSearchedStudentAverageScore(searchedStudent.calculateAverageScore());
                         break;
+                    case 7:
+                        outputView.showProgramEndMessage();
+                        return;
                 }
                 ;
             }
