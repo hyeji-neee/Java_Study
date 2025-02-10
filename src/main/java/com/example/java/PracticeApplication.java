@@ -16,6 +16,10 @@ public class PracticeApplication {
             while (true) {
                 outputView.mainMenu();
                 switch (inputView.menuInt()) {
+                    case 1:
+                        students.orderStudentsByName(students.getStudents());
+                        outputView.showOrderedStudentByName(students.getStudents());
+                        break;
                     case 3:
                         outputView.showStudentIdPrompt();
                         String id = inputView.readLine();
