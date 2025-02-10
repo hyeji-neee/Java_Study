@@ -36,4 +36,8 @@ public class Students {
     public void orderStudentsByName(List<Student> students){
         students.sort(Comparator.comparing(Student::getName));
     }
+
+    public void orderStudentsByScore(List<Student> students){
+        students.sort(Comparator.comparing(Student::calculateAverageScore).reversed());
+    }
 }
