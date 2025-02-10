@@ -42,4 +42,9 @@ public class Student {
         return Math.round((koreanScore + mathScore + englishScore) / 3.0);
     }
 
+    @Override
+    public String toString() {
+        return '\n' + sid + '\t' + name + '\t' + calculateAverageScore();
+    }
+
 }
