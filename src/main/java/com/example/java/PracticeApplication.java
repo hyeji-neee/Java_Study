@@ -56,9 +56,13 @@ public class PracticeApplication {
                         outputView.showSearchedStudentName(searchedStudent.getName());
                         outputView.showSearchedStudentAverageScore(searchedStudent.calculateAverageScore());
                         break;
+
                     case 7:
                         outputView.showProgramEndMessage();
                         return;
+
+                    default:
+                        System.out.println("1~7번 항목중 선택해야합니다.");
                 }
                 ;
             }
