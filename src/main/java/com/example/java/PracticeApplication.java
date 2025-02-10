@@ -49,11 +49,13 @@ public class PracticeApplication {
                             case 1:
                                 outputView.showModifyIdPrompt();
                                 String modifiedId = inputView.readLine();
+                                validator.validateSid(modifiedId);
                                 modifiedStudent.updateId(modifiedId);
                                 break;
                             case 2:
                                 outputView.showModifyNamePrompt();
                                 String modifiedName = inputView.readLine();
+                                validator.validateName(modifiedName);
                                 modifiedStudent.updateName(modifiedName);
                                 break;
                             case 3:
