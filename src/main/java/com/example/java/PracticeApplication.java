@@ -18,7 +18,11 @@ public class PracticeApplication {
                 switch (inputView.menuInt()) {
                     case 1:
                         students.orderStudentsByName(students.getStudents());
-                        outputView.showOrderedStudentByName(students.getStudents());
+                        outputView.showStudents(students.getStudents());
+                        break;
+                    case 2:
+                        students.orderStudentsByScore(students.getStudents());
+                        outputView.showStudents(students.getStudents());
                         break;
                     case 3:
                         outputView.showStudentIdPrompt();
