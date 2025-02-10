@@ -44,7 +44,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return '\n' + sid + '\t' + name + '\t' + calculateAverageScore();
+        return sid + '\t' + name + '\t' + calculateAverageScore();
     }
 
 }
