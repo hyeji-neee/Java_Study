@@ -2,7 +2,8 @@ package com.example.java.domains.student;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Students {
     private List<Student> students;
@@ -30,5 +31,9 @@ public class Students {
         String name = student.getName();
         students.remove(student);
         return name;
+    }
+
+    public void orderStudentsByName(List<Student> students){
+        students.sort(Comparator.comparing(Student::getName));
     }
 }
