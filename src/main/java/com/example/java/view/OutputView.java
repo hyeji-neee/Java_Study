@@ -90,4 +90,8 @@ public class OutputView {
     public void showSearchedStudentAverageScore(double averageScore) {
         System.out.println("평균: " + averageScore+"\n");
     }
+
+    public void showProgramEndMessage(){
+        System.out.println("프로그램을 종료합니다.");
+    }
 }
