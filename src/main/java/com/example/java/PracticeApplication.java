@@ -17,13 +17,13 @@ public class PracticeApplication {
                 outputView.mainMenu();
                 switch (inputView.menuInt()) {
                     case 1:
-                        validator.validateIfStudentsListIsEmpty(students.getStudents());
-                        students.orderStudentsByName(students.getStudents());
+                        validator.validateStudentsEmpty(students.getStudents());
+                        students.sortByName(students.getStudents());
                         outputView.showStudents(students.getStudents());
                         break;
                     case 2:
-                        validator.validateIfStudentsListIsEmpty(students.getStudents());
-                        students.orderStudentsByScore(students.getStudents());
+                        validator.validateStudentsEmpty(students.getStudents());
+                        students.sortByScore(students.getStudents());
                         outputView.showStudents(students.getStudents());
                         break;
                     case 3:
@@ -46,7 +46,7 @@ public class PracticeApplication {
                         int engScore = inputView.scoreInt();
 
                         Student student = new Student(id, name, korScore, mathScore, engScore);
-                        students.stdRegister(students.getStudents(), student);
+                        students.register(students.getStudents(), student);
                         outputView.showRegistrationSuccessMessage();
                         break;
 
@@ -54,15 +54,15 @@ public class PracticeApplication {
                         outputView.showDeleteStudentIdPrompt();
                         String deleteId = inputView.readLine();
                         validator.validateSid(deleteId);
-                        Student deletedStudent = students.findStudentById(students.getStudents(), deleteId);
-                        String deletedName = students.stdDelete(deletedStudent);
+                        Student deletedStudent = students.findById(students.getStudents(), deleteId);
+                        String deletedName = students.delete(deletedStudent);
                         outputView.showDeletionSuccessMessage(deletedName);
                         break;
 
                     case 6:
                         outputView.showSearchStudentIdPrompt();
                         String searchId = inputView.readLine();
-                        Student searchedStudent = students.findStudentById(students.getStudents(), searchId);
+                        Student searchedStudent = students.findById(students.getStudents(), searchId);
                         outputView.showSearchedStudentName(searchedStudent.getName());
                         outputView.showSearchedStudentAverageScore(searchedStudent.calculateAverageScore());
                         break;
