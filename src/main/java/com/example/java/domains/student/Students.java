@@ -33,11 +33,11 @@ public class Students {
         return name;
     }
 
-    public void sortByName(List<Student> students){
+    public void sortByName(List<Student> students) {
         students.sort(Comparator.comparing(Student::getName));
     }
 
-    public void sortByScore(List<Student> students){
+    public void sortByScore(List<Student> students) {
         students.sort(Comparator.comparing(Student::calculateAverageScore).reversed());
     }
 }

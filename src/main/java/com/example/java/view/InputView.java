@@ -5,15 +5,16 @@ import java.util.InputMismatchException;
 
 public class InputView {
     private final Scanner sc = new Scanner(System.in);
+
     public String readLine() {
         String value = sc.nextLine();
-        if(value.isBlank()) {
+        if (value.isBlank()) {
             throw new IllegalArgumentException("공백은 입력할 수 없습니다.");
         }
         return value;
     }
 
-    public int menuInt(){
+    public int menuInt() {
         try {
             int value = sc.nextInt();
             sc.nextLine();
