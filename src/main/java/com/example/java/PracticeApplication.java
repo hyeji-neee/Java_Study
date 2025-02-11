@@ -53,7 +53,7 @@ public class PracticeApplication {
                     case 4:
                         outputView.showModifyStudentIdPrompt();
                         String modifyId = inputView.readLine();
-                        Student modifiedStudent = students.findStudentById(students.getStudents(), modifyId);
+                        Student modifiedStudent = students.findById(students.getStudents(), modifyId);
                         outputView.modifyMenu();
                         switch (inputView.menuInt()) {
                             case 1:
