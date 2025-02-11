@@ -12,8 +12,8 @@ public class PracticeApplication {
         OutputView outputView = new OutputView();
         InputView inputView = new InputView();
         Validator validator = new Validator();
-        try {
-            while (true) {
+        while (true) {
+            try {
                 outputView.mainMenu();
                 switch (inputView.menuInt()) {
                     case 1:
@@ -111,12 +111,11 @@ public class PracticeApplication {
                         return;
 
                     default:
-                        System.out.println("1~7번 항목중 선택해야합니다.");
+                        System.out.println("\n1~7번 항목중 선택해야합니다.");
                 }
-                ;
+            } catch (IllegalArgumentException e) {
+                System.out.println("\n" + e.getMessage());
             }
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
         }
     }
 }
