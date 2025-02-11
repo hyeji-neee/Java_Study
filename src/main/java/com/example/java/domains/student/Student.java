@@ -42,6 +42,11 @@ public class Student {
         return Math.round((koreanScore + mathScore + englishScore) / 3.0);
     }
 
+    @Override
+    public String toString() {
+        return sid + '\t' + name + '\t' + calculateAverageScore();
+    }
+
     public void updateId(String newId) {
         this.sid = newId;
     }
@@ -61,5 +66,4 @@ public class Student {
     public void updateEnglishScore(int newEnglishScore) {
         this.englishScore = newEnglishScore;
     }
-
 }
