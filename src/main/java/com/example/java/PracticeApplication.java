@@ -87,6 +87,14 @@ public class PracticeApplication {
                         String deletedName = students.stdDelete(deletedStudent);
                         outputView.showDeletionSuccessMessage(deletedName);
                         break;
+
+                    case 6:
+                        outputView.showSearchStudentIdPrompt();
+                        String searchId = inputView.readLine();
+                        Student searchedStudent = students.findStudentById(students.getStudents(), searchId);
+                        outputView.showSearchedStudentName(searchedStudent.getName());
+                        outputView.showSearchedStudentAverageScore(searchedStudent.calculateAverageScore());
+                        break;
                 }
                 ;
             }

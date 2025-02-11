@@ -82,5 +82,12 @@ public class OutputView {
 
     public void showModificationSuccessMessage() {
         System.out.println("\n학생 수정이 완료되었습니다!\n");
+      
+    public void showSearchedStudentName(String searchedName) {
+        System.out.println("\n이름: " + searchedName);
+    }
+
+    public void showSearchedStudentAverageScore(double averageScore) {
+        System.out.println("평균: " + averageScore+"\n");
     }
 }
