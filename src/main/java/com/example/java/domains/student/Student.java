@@ -47,4 +47,23 @@ public class Student {
         return sid + '\t' + name + '\t' + calculateAverageScore();
     }
 
+    public void updateId(String newId) {
+        this.sid = newId;
+    }
+
+    public void updateName(String newName) {
+        this.name = newName;
+    }
+
+    public void updateKoreanScore(int newKoreanScore) {
+        this.koreanScore = newKoreanScore;
+    }
+
+    public void updateMathScore(int newMathScore){
+        this.mathScore = newMathScore;
+    }
+
+    public void updateEnglishScore(int newEnglishScore) {
+        this.englishScore = newEnglishScore;
+    }
 }

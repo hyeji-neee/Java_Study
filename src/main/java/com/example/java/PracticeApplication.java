@@ -50,6 +50,45 @@ public class PracticeApplication {
                         outputView.showRegistrationSuccessMessage();
                         break;
 
+                    case 4:
+                        outputView.showModifyStudentIdPrompt();
+                        String modifyId = inputView.readLine();
+                        Student modifiedStudent = students.findStudentById(students.getStudents(), modifyId);
+                        outputView.modifyMenu();
+                        switch (inputView.menuInt()) {
+                            case 1:
+                                outputView.showModifyIdPrompt();
+                                String modifiedId = inputView.readLine();
+                                validator.validateSid(modifiedId);
+                                modifiedStudent.updateId(modifiedId);
+                                break;
+                            case 2:
+                                outputView.showModifyNamePrompt();
+                                String modifiedName = inputView.readLine();
+                                validator.validateName(modifiedName);
+                                modifiedStudent.updateName(modifiedName);
+                                break;
+                            case 3:
+                                outputView.showModifyKoreanScorePrompt();
+                                int modifiedKorScore = inputView.scoreInt();
+                                modifiedStudent.updateKoreanScore(modifiedKorScore);
+                                break;
+                            case 4:
+                                outputView.showModifyMathScorePrompt();
+                                int modifiedMathScore = inputView.scoreInt();
+                                modifiedStudent.updateMathScore(modifiedMathScore);
+                                break;
+                            case 5:
+                                outputView.showModifyEnglishScorePrompt();
+                                int modifiedEngScore = inputView.scoreInt();
+                                modifiedStudent.updateEnglishScore(modifiedEngScore);
+                                break;
+                            default:
+                                throw new IllegalArgumentException("1~5번 항목 중 선택해야 합니다.");
+                        }
+                        outputView.showModificationSuccessMessage();
+                        break;
+
                     case 5:
                         outputView.showDeleteStudentIdPrompt();
                         String deleteId = inputView.readLine();
@@ -66,6 +105,13 @@ public class PracticeApplication {
                         outputView.showSearchedStudentName(searchedStudent.getName());
                         outputView.showSearchedStudentAverageScore(searchedStudent.calculateAverageScore());
                         break;
+
+                    case 7:
+                        outputView.showProgramEndMessage();
+                        return;
+
+                    default:
+                        System.out.println("1~7번 항목중 선택해야합니다.");
                 }
                 ;
             }

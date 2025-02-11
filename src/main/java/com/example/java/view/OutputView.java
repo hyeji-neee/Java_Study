@@ -49,6 +49,10 @@ public class OutputView {
         System.out.print("\n검색할 학생의 학번을 입력하세요 : ");
     }
 
+    public void showModifyStudentIdPrompt() {
+        System.out.print("\n수정할 학생의 학번을 입력하세요 : ");
+    }
+
     public void showRegistrationSuccessMessage() {
         System.out.println("\n학생 등록이 완료되었습니다!");
     }
@@ -57,6 +61,29 @@ public class OutputView {
         System.out.println("\n" + deletedName + " 님이 삭제되었습니다.");
     }
 
+    public void showModifyIdPrompt(){
+        System.out.print("\n수정할 학번을 입력하세요 : ");
+    }
+
+    public void showModifyNamePrompt(){
+        System.out.print("\n수정할 이름을 입력하세요 : ");
+    }
+
+    public void showModifyKoreanScorePrompt(){
+        System.out.print("\n수정할 국어 점수를 입력하세요 : ");
+    }
+
+    public void showModifyMathScorePrompt(){
+        System.out.print("\n수정할 수학 점수를 입력하세요 : ");
+    }
+
+    public void showModifyEnglishScorePrompt(){
+        System.out.print("\n수정할 영어 점수를 입력하세요 : ");
+    }
+
+    public void showModificationSuccessMessage() {
+        System.out.println("\n학생 수정이 완료되었습니다!\n");
+      
     public void showSearchedStudentName(String searchedName) {
         System.out.println("\n이름: " + searchedName);
     }
@@ -69,5 +96,8 @@ public class OutputView {
         for(Student student : students){
             System.out.println(student);
         }
+    }
+    public void showProgramEndMessage(){
+        System.out.println("프로그램을 종료합니다.");
     }
 }
