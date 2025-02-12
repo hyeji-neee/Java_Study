@@ -18,12 +18,12 @@ public class PracticeApplication {
                 switch (inputView.readMenuOption()) {
                     case 1:
                         validator.validateStudentsEmpty(students.getStudents());
-                        students.sortByName(students.getStudents());
+                        students.sortByName();
                         outputView.showStudents(students.getStudents());
                         break;
                     case 2:
                         validator.validateStudentsEmpty(students.getStudents());
-                        students.sortByScore(students.getStudents());
+                        students.sortByScore();
                         outputView.showStudents(students.getStudents());
                         break;
                     case 3:
@@ -81,7 +81,7 @@ public class PracticeApplication {
                             }
                         }
                         Student student = new Student(id, name, korScore, mathScore, engScore);
-                        students.register(students.getStudents(), student);
+                        students.register(student);
                         outputView.showRegistrationSuccessMessage();
                         break;
                     case 4:
@@ -92,7 +92,7 @@ public class PracticeApplication {
                             try {
                                 modifyId = inputView.readLine();
                                 validator.validateSid(modifyId);
-                                modifiedStudent = students.findById(students.getStudents(), modifyId);
+                                modifiedStudent = students.findById(modifyId);
                                 break;
                             } catch (IllegalArgumentException e) {
                                 System.out.println("\n" + e.getMessage());
@@ -189,7 +189,7 @@ public class PracticeApplication {
                                 System.out.println("\n" + e.getMessage());
                             }
                         }
-                        deletedStudent = students.findById(students.getStudents(), deleteId);
+                        deletedStudent = students.findById(deleteId);
                         String deletedName = students.delete(deletedStudent);
                         outputView.showDeletionSuccessMessage(deletedName);
                         break;
@@ -206,7 +206,7 @@ public class PracticeApplication {
                                 System.out.println("\n" + e.getMessage());
                             }
                         }
-                        searchedStudent = students.findById(students.getStudents(), searchId);
+                        searchedStudent = students.findById(searchId);
                         outputView.showSearchedStudentName(searchedStudent.getName());
                         outputView.showSearchedStudentAverageScore(searchedStudent.calculateAverageScore());
                         break;
