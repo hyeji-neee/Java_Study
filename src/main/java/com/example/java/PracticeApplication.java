@@ -99,7 +99,7 @@ public class PracticeApplication {
                             }
                         }
                         while (true) {
-                            outputView.modifyMenu();
+                            outputView.studentInfoEditMenu();
                             switch (inputView.readMenuOption()) {
                                 case 1:
                                     String modifiedId;
