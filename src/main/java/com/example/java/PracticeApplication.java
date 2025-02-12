@@ -15,7 +15,7 @@ public class PracticeApplication {
         while (true) {
             try {
                 outputView.mainMenu();
-                switch (inputView.menuInt()) {
+                switch (inputView.readMenuOption()) {
                     case 1:
                         validator.validateStudentsEmpty(students.getStudents());
                         students.sortByName(students.getStudents());
@@ -54,7 +54,7 @@ public class PracticeApplication {
                         while (true) {
                             outputView.showStudentKoreanScorePrompt();
                             try {
-                                korScore = inputView.scoreInt();
+                                korScore = inputView.readScore();
                                 break;
                             } catch (IllegalArgumentException e) {
                                 System.out.println("\n" + e.getMessage());
@@ -64,7 +64,7 @@ public class PracticeApplication {
                         while (true) {
                             outputView.showStudentMathScorePrompt();
                             try {
-                                mathScore = inputView.scoreInt();
+                                mathScore = inputView.readScore();
                                 break;
                             } catch (IllegalArgumentException e) {
                                 System.out.println("\n" + e.getMessage());
@@ -74,7 +74,7 @@ public class PracticeApplication {
                         while (true) {
                             outputView.showStudentEnglishScorePrompt();
                             try {
-                                engScore = inputView.scoreInt();
+                                engScore = inputView.readScore();
                                 break;
                             } catch (IllegalArgumentException e) {
                                 System.out.println("\n" + e.getMessage());
@@ -100,7 +100,7 @@ public class PracticeApplication {
                         }
                         while (true) {
                             outputView.modifyMenu();
-                            switch (inputView.menuInt()) {
+                            switch (inputView.readMenuOption()) {
                                 case 1:
                                     String modifiedId;
                                     while (true) {
@@ -134,7 +134,7 @@ public class PracticeApplication {
                                     while (true) {
                                         outputView.showModifyKoreanScorePrompt();
                                         try {
-                                            modifiedKorScore = inputView.scoreInt();
+                                            modifiedKorScore = inputView.readScore();
                                             break;
                                         } catch (IllegalArgumentException e) {
                                             System.out.println("\n" + e.getMessage());
@@ -147,7 +147,7 @@ public class PracticeApplication {
                                     while (true) {
                                         outputView.showModifyMathScorePrompt();
                                         try {
-                                            modifiedMathScore = inputView.scoreInt();
+                                            modifiedMathScore = inputView.readScore();
                                             break;
                                         } catch (IllegalArgumentException e) {
                                             System.out.println("\n" + e.getMessage());
@@ -160,7 +160,7 @@ public class PracticeApplication {
                                     while (true) {
                                         outputView.showModifyEnglishScorePrompt();
                                         try {
-                                            modifiedEngScore = inputView.scoreInt();
+                                            modifiedEngScore = inputView.readScore();
                                             break;
                                         } catch (IllegalArgumentException e) {
                                             System.out.println("\n" + e.getMessage());
