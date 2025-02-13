@@ -59,7 +59,7 @@ public class Student {
         this.koreanScore = newKoreanScore;
     }
 
-    public void updateMathScore(int newMathScore){
+    public void updateMathScore(int newMathScore) {
         this.mathScore = newMathScore;
     }
 

@@ -16,11 +16,11 @@ public class Students {
         return students;
     }
 
-    public void register(List<Student> students, Student student) {
+    public void register(Student student) {
         students.add(student);
     }
 
-    public Student findById(List<Student> students, String id) {
+    public Student findById(String id) {
         return students.stream()
                 .filter(student -> student.getSid().equals(id))
                 .findFirst()
@@ -33,11 +33,11 @@ public class Students {
         return name;
     }
 
-    public void sortByName(List<Student> students){
+    public void sortByName() {
         students.sort(Comparator.comparing(Student::getName));
     }
 
-    public void sortByScore(List<Student> students){
+    public void sortByScore() {
         students.sort(Comparator.comparing(Student::calculateAverageScore).reversed());
     }
 }

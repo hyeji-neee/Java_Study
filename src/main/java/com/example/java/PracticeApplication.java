@@ -12,111 +12,213 @@ public class PracticeApplication {
         OutputView outputView = new OutputView();
         InputView inputView = new InputView();
         Validator validator = new Validator();
-        try {
-            while (true) {
+        while (true) {
+            try {
                 outputView.mainMenu();
-                switch (inputView.menuInt()) {
+                switch (inputView.readMenuOption()) {
                     case 1:
                         validator.validateStudentsEmpty(students.getStudents());
-                        students.sortByName(students.getStudents());
+                        students.sortByName();
                         outputView.showStudents(students.getStudents());
                         break;
                     case 2:
                         validator.validateStudentsEmpty(students.getStudents());
-                        students.sortByScore(students.getStudents());
+                        students.sortByScore();
                         outputView.showStudents(students.getStudents());
                         break;
                     case 3:
-                        outputView.showStudentIdPrompt();
-                        String id = inputView.readLine();
-                        validator.validateSid(id);
-                        validator.validateRegistration(students.getStudents(), id);
-
-                        outputView.showStudentNamePrompt();
-                        String name = inputView.readLine();
-                        validator.validateName(name);
-
-                        outputView.showStudentKoreanScorePrompt();
-                        int korScore = inputView.scoreInt();
-
-                        outputView.showStudentMathScorePrompt();
-                        int mathScore = inputView.scoreInt();
-
-                        outputView.showStudentEnglishScorePrompt();
-                        int engScore = inputView.scoreInt();
-
+                        String id;
+                        while (true) {
+                            outputView.showStudentIdPrompt();
+                            try {
+                                id = inputView.readLine();
+                                validator.validateSid(id);
+                                validator.validateRegistration(students.getStudents(), id);
+                                break;
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("\n" + e.getMessage());
+                            }
+                        }
+                        String name;
+                        while (true) {
+                            outputView.showStudentNamePrompt();
+                            try {
+                                name = inputView.readLine();
+                                validator.validateName(name);
+                                break;
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("\n" + e.getMessage());
+                            }
+                        }
+                        int korScore;
+                        while (true) {
+                            outputView.showStudentKoreanScorePrompt();
+                            try {
+                                korScore = inputView.readScore();
+                                break;
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("\n" + e.getMessage());
+                            }
+                        }
+                        int mathScore;
+                        while (true) {
+                            outputView.showStudentMathScorePrompt();
+                            try {
+                                mathScore = inputView.readScore();
+                                break;
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("\n" + e.getMessage());
+                            }
+                        }
+                        int engScore;
+                        while (true) {
+                            outputView.showStudentEnglishScorePrompt();
+                            try {
+                                engScore = inputView.readScore();
+                                break;
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("\n" + e.getMessage());
+                            }
+                        }
                         Student student = new Student(id, name, korScore, mathScore, engScore);
-                        students.register(students.getStudents(), student);
+                        students.register(student);
                         outputView.showRegistrationSuccessMessage();
                         break;
-
                     case 4:
-                        outputView.showModifyStudentIdPrompt();
-                        String modifyId = inputView.readLine();
-                        Student modifiedStudent = students.findStudentById(students.getStudents(), modifyId);
-                        outputView.modifyMenu();
-                        switch (inputView.menuInt()) {
-                            case 1:
-                                outputView.showModifyIdPrompt();
-                                String modifiedId = inputView.readLine();
-                                validator.validateSid(modifiedId);
-                                modifiedStudent.updateId(modifiedId);
+                        String modifyId;
+                        Student modifiedStudent;
+                        while (true) {
+                            outputView.showModifyStudentIdPrompt();
+                            try {
+                                modifyId = inputView.readLine();
+                                validator.validateSid(modifyId);
+                                modifiedStudent = students.findById(modifyId);
                                 break;
-                            case 2:
-                                outputView.showModifyNamePrompt();
-                                String modifiedName = inputView.readLine();
-                                validator.validateName(modifiedName);
-                                modifiedStudent.updateName(modifiedName);
-                                break;
-                            case 3:
-                                outputView.showModifyKoreanScorePrompt();
-                                int modifiedKorScore = inputView.scoreInt();
-                                modifiedStudent.updateKoreanScore(modifiedKorScore);
-                                break;
-                            case 4:
-                                outputView.showModifyMathScorePrompt();
-                                int modifiedMathScore = inputView.scoreInt();
-                                modifiedStudent.updateMathScore(modifiedMathScore);
-                                break;
-                            case 5:
-                                outputView.showModifyEnglishScorePrompt();
-                                int modifiedEngScore = inputView.scoreInt();
-                                modifiedStudent.updateEnglishScore(modifiedEngScore);
-                                break;
-                            default:
-                                throw new IllegalArgumentException("1~5번 항목 중 선택해야 합니다.");
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("\n" + e.getMessage());
+                            }
                         }
-                        outputView.showModificationSuccessMessage();
+                        while (true) {
+                            outputView.studentInfoEditMenu();
+                            switch (inputView.readMenuOption()) {
+                                case 1:
+                                    String modifiedId;
+                                    while (true) {
+                                        outputView.showModifyIdPrompt();
+                                        try {
+                                            modifiedId = inputView.readLine();
+                                            validator.validateSid(modifiedId);
+                                            break;
+                                        } catch (IllegalArgumentException e) {
+                                            System.out.println("\n" + e.getMessage());
+                                        }
+                                    }
+                                    modifiedStudent.updateId(modifiedId);
+                                    break;
+                                case 2:
+                                    String modifiedName;
+                                    while (true) {
+                                        outputView.showModifyNamePrompt();
+                                        try {
+                                            modifiedName = inputView.readLine();
+                                            validator.validateName(modifiedName);
+                                            break;
+                                        } catch (IllegalArgumentException e) {
+                                            System.out.println("\n" + e.getMessage());
+                                        }
+                                    }
+                                    modifiedStudent.updateName(modifiedName);
+                                    break;
+                                case 3:
+                                    int modifiedKorScore;
+                                    while (true) {
+                                        outputView.showModifyKoreanScorePrompt();
+                                        try {
+                                            modifiedKorScore = inputView.readScore();
+                                            break;
+                                        } catch (IllegalArgumentException e) {
+                                            System.out.println("\n" + e.getMessage());
+                                        }
+                                    }
+                                    modifiedStudent.updateKoreanScore(modifiedKorScore);
+                                    break;
+                                case 4:
+                                    int modifiedMathScore;
+                                    while (true) {
+                                        outputView.showModifyMathScorePrompt();
+                                        try {
+                                            modifiedMathScore = inputView.readScore();
+                                            break;
+                                        } catch (IllegalArgumentException e) {
+                                            System.out.println("\n" + e.getMessage());
+                                        }
+                                    }
+                                    modifiedStudent.updateMathScore(modifiedMathScore);
+                                    break;
+                                case 5:
+                                    int modifiedEngScore;
+                                    while (true) {
+                                        outputView.showModifyEnglishScorePrompt();
+                                        try {
+                                            modifiedEngScore = inputView.readScore();
+                                            break;
+                                        } catch (IllegalArgumentException e) {
+                                            System.out.println("\n" + e.getMessage());
+                                        }
+                                    }
+                                    modifiedStudent.updateEnglishScore(modifiedEngScore);
+                                    break;
+                                default:
+                                    System.out.println("\n1~5번 항목 중 선택해야 합니다.\n");
+                                    continue;
+                            }
+                            outputView.showModificationSuccessMessage();
+                            break;
+                        }
                         break;
-
                     case 5:
-                        outputView.showDeleteStudentIdPrompt();
-                        String deleteId = inputView.readLine();
-                        validator.validateSid(deleteId);
-                        Student deletedStudent = students.findById(students.getStudents(), deleteId);
+                        String deleteId;
+                        Student deletedStudent;
+                        while (true) {
+                            outputView.showDeleteStudentIdPrompt();
+                            try {
+                                deleteId = inputView.readLine();
+                                validator.validateSid(deleteId);
+                                break;
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("\n" + e.getMessage());
+                            }
+                        }
+                        deletedStudent = students.findById(deleteId);
                         String deletedName = students.delete(deletedStudent);
                         outputView.showDeletionSuccessMessage(deletedName);
                         break;
-
                     case 6:
-                        outputView.showSearchStudentIdPrompt();
-                        String searchId = inputView.readLine();
-                        Student searchedStudent = students.findById(students.getStudents(), searchId);
+                        String searchId;
+                        Student searchedStudent;
+                        while (true) {
+                            outputView.showSearchStudentIdPrompt();
+                            try {
+                                searchId = inputView.readLine();
+                                validator.validateSid(searchId);
+                                break;
+                            } catch (IllegalArgumentException e) {
+                                System.out.println("\n" + e.getMessage());
+                            }
+                        }
+                        searchedStudent = students.findById(searchId);
                         outputView.showSearchedStudentName(searchedStudent.getName());
                         outputView.showSearchedStudentAverageScore(searchedStudent.calculateAverageScore());
                         break;
-
                     case 7:
                         outputView.showProgramEndMessage();
                         return;
-
                     default:
-                        System.out.println("1~7번 항목중 선택해야합니다.");
+                        System.out.println("\n1~7번 항목중 선택해야합니다.");
                 }
-                ;
+            } catch (IllegalArgumentException e) {
+                System.out.println("\n" + e.getMessage());
             }
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
         }
     }
 }

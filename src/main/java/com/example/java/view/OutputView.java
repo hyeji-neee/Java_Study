@@ -1,6 +1,7 @@
 package com.example.java.view;
 
 import com.example.java.domains.student.*;
+
 import java.util.List;
 
 public class OutputView {
@@ -16,7 +17,7 @@ public class OutputView {
         System.out.print("메뉴를 선택하세요 : ");
     }
 
-    public void modifyMenu() {
+    public void studentInfoEditMenu() {
         System.out.println("1. 학번, 2. 이름, 3. 국어 점수, 4. 수학 점수, 5. 영어 점수");
         System.out.print("수정할 항목을 선택하세요 : ");
     }
@@ -61,43 +62,45 @@ public class OutputView {
         System.out.println("\n" + deletedName + " 님이 삭제되었습니다.");
     }
 
-    public void showModifyIdPrompt(){
+    public void showModifyIdPrompt() {
         System.out.print("\n수정할 학번을 입력하세요 : ");
     }
 
-    public void showModifyNamePrompt(){
+    public void showModifyNamePrompt() {
         System.out.print("\n수정할 이름을 입력하세요 : ");
     }
 
-    public void showModifyKoreanScorePrompt(){
+    public void showModifyKoreanScorePrompt() {
         System.out.print("\n수정할 국어 점수를 입력하세요 : ");
     }
 
-    public void showModifyMathScorePrompt(){
+    public void showModifyMathScorePrompt() {
         System.out.print("\n수정할 수학 점수를 입력하세요 : ");
     }
 
-    public void showModifyEnglishScorePrompt(){
+    public void showModifyEnglishScorePrompt() {
         System.out.print("\n수정할 영어 점수를 입력하세요 : ");
     }
 
     public void showModificationSuccessMessage() {
-        System.out.println("\n학생 수정이 완료되었습니다!\n");
-      
+        System.out.println("\n학생 수정이 완료되었습니다!");
+    }
+
     public void showSearchedStudentName(String searchedName) {
         System.out.println("\n이름: " + searchedName);
     }
 
     public void showSearchedStudentAverageScore(double averageScore) {
-        System.out.println("평균: " + averageScore+"\n");
+        System.out.println("평균: " + averageScore);
     }
 
     public void showStudents(List<Student> students) {
-        for(Student student : students){
+        for (Student student : students) {
             System.out.println(student);
         }
     }
-    public void showProgramEndMessage(){
+
+    public void showProgramEndMessage() {
         System.out.println("프로그램을 종료합니다.");
     }
 }
